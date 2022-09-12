@@ -11,6 +11,16 @@ namespace cviceniTridy1209
         private int low;
         private int high;
 
+        public Interval(int low, int high)
+        {
+            if(low > high)
+            {
+                throw new Exception("Low can't be higher than High");
+            }
+            this.low = low; 
+            this.high = high;
+        }
+
         public int Low
         {
             get
@@ -19,13 +29,14 @@ namespace cviceniTridy1209
             }
             set
             {
-                if (value <= high)
+               
+                if(value < High)
                 {
                     low = value;
                 }
                 else
                 {
-                    throw new Exception("Low can't be higher than High");
+                    throw new Exception("Low ["+value+"] can't be higher than High");
                 }
 
             }
@@ -40,7 +51,7 @@ namespace cviceniTridy1209
 
             set
             {
-                if (value >= low)
+                if (value > Low)
                 {
                     high = value;
                 }
@@ -59,8 +70,30 @@ namespace cviceniTridy1209
             }
             else
             {
-                return false;   
+                return false;
             }
+        }
+
+
+        public Interval? prunik(Interval interval2)
+        {
+            if (this.contains(interval2.Low))
+            {
+                return new Interval(interval2.Low, this.High);
+            }else if (this.contains(interval2.High))
+            {
+                return new Interval(this.Low, interval2.High);
+            }
+            else
+            {
+
+                return null;
+            }
+        }
+
+        public override string ToString()
+        {
+            return "Interval [" + Low +", "+High+"]";
         }
 
     }
