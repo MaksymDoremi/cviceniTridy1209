@@ -11,9 +11,9 @@ namespace cviceniTridy1209
 
         private int pointValue;
 
-        public Point(int pointXY)
+        public Point(int pointValue)
         {
-            PointValue = pointXY;
+            PointValue = pointValue;
         }
 
         public int PointValue
