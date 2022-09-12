@@ -22,7 +22,7 @@ namespace cviceniTridy1209
             set { pointValue = value; }
         }
 
-        public int comparePoints(Point point2)
+        public int lengthBetween(Point point2)
         {
             int high = Math.Max(Math.Abs(this.PointValue), Math.Abs(point2.PointValue));
             int low = Math.Min(Math.Abs(this.PointValue), Math.Abs(point2.PointValue));

@@ -16,5 +16,16 @@ namespace cviceniTridy1209
             this.start = point;
             this.end = end;
         }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+
+            for (int i = 0; i < start.lengthBetween(end); i++)
+            {
+                result.Append("*");
+            }
+            return result.ToString();
+        }
     }
 }

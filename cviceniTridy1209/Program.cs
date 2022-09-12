@@ -21,7 +21,9 @@ class Program
             Console.WriteLine(e.Message);
         }
 
-        
+        Primka p = new Primka(new Point(-20), new Point(100));
+
+        Console.WriteLine(p);
 
 
     }
