@@ -15,7 +15,7 @@ namespace cviceniTridy1209
 
         public Triangle(int a, int b, int c)
         {
-            if (triangleInequality(a, b, c))
+            if (triangleInequality(a,b,c))
             {
                 this.A = a;
                 this.B = b;
@@ -26,6 +26,11 @@ namespace cviceniTridy1209
                 throw new Exception("Triangle inequality doesn't match. Can't create triangle");
             }
 
+        }
+
+        public override string ToString()
+        {
+            return "Triangle [" + A + ";" + B + ";"+C+"]";
         }
 
         public int A
@@ -76,20 +81,23 @@ namespace cviceniTridy1209
             }
         }
 
-        private bool triangleInequality(int a, int b, int c)
+        public bool triangleInequality(int a, int b, int c)
         {
-            //case 1
-            if (a + b > c)
+            
+            if ((a + b > c) && (a + c > b) && (b + c > a))
             {
                 return true;
             }
-            //case 2
-            else if (a + c > b)
+            else
             {
-                return true;
+                return false;
             }
-            //case 3
-            else if (b + c > a)
+        }
+
+        public bool triangleInequality()
+        {
+            
+            if ((a + b > c) && (a + c > b) && (b + c > a))
             {
                 return true;
             }
