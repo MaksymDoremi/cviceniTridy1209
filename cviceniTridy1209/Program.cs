@@ -26,9 +26,12 @@ class Program
 
         //  PRIMKA
 
-        Primka p = new Primka(new Point(-20), new Point(100));
+        Primka p = new Primka(new Point(-20), new Point(30));
 
+        // draws the line
         Console.WriteLine(p);
+        // show the length between two points
+        Console.WriteLine(p.Start.lengthBetween(p.End));
 
         // TRIANGLE
         try
@@ -56,7 +59,7 @@ class Program
             t1.B = 3; // zmenime na nesmysl
             Console.WriteLine(t1);
 
-            Console.WriteLine("Nerovnost: " + t1.triangleInequality());
+            Console.WriteLine("Nerovnost: " + t1.triangleInequality()); //false
             Console.WriteLine("rovnostranny: " + t1.rovnostranny(t1.A, t1.B, t1.C)); // false
             Console.WriteLine("rovnoramenny: " + t1.rovnoramenny(t1.A, t1.B, t1.C)); // false
             Console.WriteLine("pravouhly: " + t1.pravouhly(t1.A, t1.B, t1.C));  // false

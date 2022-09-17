@@ -17,6 +17,24 @@ namespace cviceniTridy1209
             this.end = end;
         }
 
+        public Point Start
+        {
+            get { return start; }
+            set
+            {
+                start = value;
+            }
+        }
+
+        public Point End
+        {
+            get { return end; }
+            set
+            {
+                end = value;
+            }
+        }
+
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();

@@ -24,8 +24,8 @@ namespace cviceniTridy1209
 
         public int lengthBetween(Point point2)
         {
-            int high = Math.Max(Math.Abs(this.PointValue), Math.Abs(point2.PointValue));
-            int low = Math.Min(Math.Abs(this.PointValue), Math.Abs(point2.PointValue));
+            int high = Math.Max(this.PointValue, point2.PointValue);
+            int low = Math.Min(this.PointValue, point2.PointValue);
 
             return (high - low);
         }
