@@ -15,9 +15,17 @@ namespace cviceniTridy1209
 
         public Triangle(int a, int b, int c)
         {
-            this.a = a;
-            this.b = b;
-            this.c = c;
+            if (triangleInequality(a, b, c))
+            {
+                this.A = a;
+                this.B = b;
+                this.C = c;
+            }
+            else
+            {
+                throw new Exception("Triangle inequality doesn't match. Can't create triangle");
+            }
+
         }
 
         public int A
@@ -28,7 +36,7 @@ namespace cviceniTridy1209
             }
             set
             {
-                if(value <= 0)
+                if (value <= 0)
                 {
                     throw new Exception("side A is less than zero");
                 }
@@ -45,7 +53,7 @@ namespace cviceniTridy1209
             {
                 if (value <= 0)
                 {
-                   throw new Exception("side B is less than zero");
+                    throw new Exception("side B is less than zero");
                 }
                 b = value;
 
@@ -60,7 +68,7 @@ namespace cviceniTridy1209
             }
             set
             {
-                if(value <= 0)
+                if (value <= 0)
                 {
                     throw new Exception("side C is less than zero");
                 }
@@ -70,15 +78,61 @@ namespace cviceniTridy1209
 
         private bool triangleInequality(int a, int b, int c)
         {
+            //case 1
             if (a + b > c)
             {
                 return true;
             }
+            //case 2
             else if (a + c > b)
             {
                 return true;
             }
+            //case 3
             else if (b + c > a)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool rovnostranny(int a, int b, int c)
+        {
+            if (a == c && a == b)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool rovnoramenny(int a, int b, int c)
+        {
+            if (triangleInequality(a, b, c) && //basic triangle inequality
+                ((a == b && a != c) || //case 1
+                (a == c && a != b) || //case 2
+                (b == c && b != a))) //case 3
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+        public bool pravouhly(int a, int b, int c)
+        {
+            if(triangleInequality(a, b, c) && 
+                ((Math.Pow(c, 2) == Math.Pow(b,2) + Math.Pow(a, 2)) || //case 1
+                (Math.Pow(b, 2) == Math.Pow(c, 2) + Math.Pow(a, 2)) || //case 2
+                (Math.Pow(a, 2) == Math.Pow(b, 2) + Math.Pow(c, 2))))  //case 3
             {
                 return true;
             }
