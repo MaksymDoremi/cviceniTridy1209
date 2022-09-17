@@ -4,6 +4,8 @@ class Program
 {
     public static void Main(string[] args)
     {
+
+        // INTERVAL
         Interval interval1;
         Interval interval2;
         try
@@ -20,6 +22,8 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+
+        //  PRIMKA
 
         Primka p = new Primka(new Point(-20), new Point(100));
 
