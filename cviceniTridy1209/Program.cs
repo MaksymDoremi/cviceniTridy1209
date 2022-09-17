@@ -70,6 +70,14 @@ class Program
             Console.WriteLine(e.Message);
         }
 
+        //  POTRAVINA
+        Food f = new Food("mrkev", 10, 1000); 
+
+        Console.WriteLine("kJouls "+f.KJ+" to kCalories "+f.KCal);
+
+        double minimumKCal = 2600;
+
+        Console.WriteLine(f.percentage(minimumKCal) +"% from minimum "+ minimumKCal);
 
     }
 }

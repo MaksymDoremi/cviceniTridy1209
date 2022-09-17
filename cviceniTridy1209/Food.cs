@@ -73,12 +73,18 @@ namespace cviceniTridy1209
                 {
                     throw new Exception("KCal can't be less than zero");
                 }
+                kCal = value;
             }
         }
 
         public double KJtoKCal(double kJ)
         {
             return kJ * 0.239006;
+        }
+
+        public double percentage(double minimumKCal)
+        {
+            return Math.Round((KCal / minimumKCal * 100) * 100.0) / 100.0;
         }
     }
 }
